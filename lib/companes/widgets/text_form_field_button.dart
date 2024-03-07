@@ -17,11 +17,14 @@ class TextFormFieldButton extends StatelessWidget {
             cursorHeight: 44,
             cursorWidth: 328,
             decoration: InputDecoration(
-                fillColor: AppColors.textFormFieldColor,
+                fillColor: Theme.of(context).scaffoldBackgroundColor,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(16)),
                 prefixIcon: const Icon(Icons.search),
                 prefixIconColor: AppColors.smallTextColor,
                 hintText: 'Быстрый поиск',
