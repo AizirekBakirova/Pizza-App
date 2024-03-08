@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pizza/modules/register_page/google.dart';
+
 import 'package:pizza/modules/register_page/home_page.dart';
 import 'package:pizza/modules/register_page/login_or_register_page.dart';
 import 'package:pizza/modules/register_page/login_page.dart';

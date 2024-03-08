@@ -5,7 +5,7 @@ import 'package:pizza/companes/widgets/chip_button_widget.dart';
 import 'package:pizza/companes/widgets/small_text_widget.dart';
 import 'package:pizza/companes/widgets/text_form_field_button.dart';
 import 'package:pizza/data/category_models.dart';
-import 'package:pizza/modules/register_page/google.dart';
+
 import 'package:pizza/theme/app_textstyle.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -48,7 +48,7 @@ class _CategoryPageState extends State<CategoryPage> {
                 ),
 
                 const TextFormFieldButton(),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
 
@@ -96,69 +96,63 @@ class _CategoryPageState extends State<CategoryPage> {
                   child: ListView.builder(
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
-                      itemCount: 6,
+                      itemCount: categoryList.length,
                       itemBuilder: (context, index) {
-                        return InkWell(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => GooglePage())),
-                          child: Container(
-                            margin: const EdgeInsets.only(
-                              left: 10,
-                              right: 10,
-                            ),
-                            child: Card(
-                              color: Color(0xffEEEEEE),
-                              child: Row(
-                                children: [
-                                  //image container
-                                  Container(
-                                    width: 150,
-                                    height: 130,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: Colors.red,
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: AssetImage(
-                                              categoryList[index].image,
-                                            ))),
-                                  ),
-                                  SizedBox(width: 15),
-                                  // text container
-                                  Expanded(
-                                    child: Container(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          BigText(
-                                            text: categoryList[index].text,
-                                          ),
-                                          const SizedBox(
-                                            height: 15,
-                                          ),
-                                          SmallText(
-                                            text: 'Описание пиццы',
-                                            //text: categoryList[index].description
-                                          ),
-                                          const SizedBox(
-                                            height: 15,
-                                          ),
-                                          Text(
-                                            '650 c',
-                                            //categoryList[index].price,
-                                            style: AppTextStyle.smallTextStyle,
-                                          )
-                                        ],
-                                      ),
+                        return Container(
+                          margin: const EdgeInsets.only(
+                            left: 10,
+                            right: 10,
+                          ),
+                          child: Card(
+                            color: const Color(0xffEEEEEE),
+                            child: Row(
+                              children: [
+                                //image container
+                                Container(
+                                  width: 150,
+                                  height: 130,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Colors.red,
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                            categoryList[index].image,
+                                          ))),
+                                ),
+                                const SizedBox(width: 15),
+                                // text container
+                                Expanded(
+                                  child: Container(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        BigText(
+                                          text: categoryList[index].text,
+                                        ),
+                                        const SizedBox(
+                                          height: 15,
+                                        ),
+                                        SmallText(
+                                          text: 'Описание пиццы',
+                                          //text: categoryList[index].description
+                                        ),
+                                        const SizedBox(
+                                          height: 15,
+                                        ),
+                                        const Text(
+                                          '650 c',
+                                          //categoryList[index].price,
+                                          style: AppTextStyle.smallTextStyle,
+                                        )
+                                      ],
                                     ),
                                   ),
+                                ),
 
-                                  // )
-                                ],
-                              ),
+                                // )
+                              ],
                             ),
                           ),
                         );

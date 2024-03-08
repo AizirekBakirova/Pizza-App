@@ -50,5 +50,5 @@ List<CategoryModels> categoryList = [
   aziat,
   fourcheese,
   cezar,
-  mexico
+  mexico,
 ];
